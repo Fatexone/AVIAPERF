@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Web de Calcul Aéronautique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue Pilote Guide Haute Montagne</h1>
+        <select id="aircraft-select">
+            <option value="">Sélectionnez un avion</option>
+            <option value="DR400 180">DR400 180</option>
+            <option value="DR400 160">DR400 160</option>
+            <option value="CESSNA172 180">CESSNA172 180</option>
+            <option value="CESSNA172 NN">CESSNA172 NN</option>
+            <option value="CESSNA172 FP">CESSNA172 FP</option>
+        </select>
+        <div id="aircraft-info" class="hidden">
+            <!-- Informations sur l'avion seront affichées ici -->
+        </div>
+
+        <div id="performance-calculator" class="hidden">
+            <h2>Calculateur de Performance</h2>
+            <form id="performance-form">
+                <div>
+                    <label for="pilot-weight">Poids du pilote (kg):</label>
+                    <input type="number" id="pilot-weight" name="pilot-weight" value="80" required>
+                </div>
+                <div>
+                    <label for="copilot-weight">Poids du copilote (kg):</label>
+                    <input type="number" id="copilot-weight" name="copilot-weight" value="80" required>
+                </div>
+                <div>
+                    <label for="passenger-weight">Poids des passagers (kg):</label>
+                    <input type="number" id="passenger-weight" name="passenger-weight" value="0" required>
+                </div>
+                <div>
+                    <label for="baggage-weight">Poids des bagages (kg):</label>
+                    <input type="number" id="baggage-weight" name="baggage-weight" value="0" required>
+                </div>
+                <div>
+                    <label for="fuel-quantity">Quantité de carburant (litres):</label>
+                    <input type="number" id="fuel-quantity" name="fuel-quantity" value="0" required>
+                </div>
+                <div>
+                    <label for="temperature">Température (°C):</label>
+                    <input type="number" id="temperature" name="temperature" value="15" required>
+                </div>
+                <div>
+                    <label for="altitude">Altitude (ft):</label>
+                    <input type="number" id="altitude" name="altitude" value="0" required>
+                </div>
+                <div>
+                    <label for="qnh">QNH (hPa):</label>
+                    <input type="number" id="qnh" name="qnh" value="1013.25" required>
+                </div>
+                <div>
+                    <label for="runway-slope">Pente de la piste (%):</label>
+                    <select id="runway-slope" name="runway-slope" required>
+                        <option value="0">0%</option>
+                        <option value="6">6%</option>
+                        <option value="10">10%</option>
+                        <option value="15">15%</option>
+                        <option value="20">20%</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="vs0">Vitesse de décrochage (VS0) (nœuds):</label>
+                    <input type="number" id="vs0" name="vs0" value="40" required>
+                </div>
+                <button type="submit">Calculer</button>
+            </form>
+            <div id="performance-results" class="hidden">
+                <!-- Les résultats des calculs seront affichés ici -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
